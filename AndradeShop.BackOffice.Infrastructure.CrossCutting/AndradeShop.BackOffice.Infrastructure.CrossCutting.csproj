@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AndradeShop.BackOffice.Application\AndradeShop.BackOffice.Application.csproj" />
+    <ProjectReference Include="..\AndradeShop.BackOffice.Infrastructure.Out.DbAccess\AndradeShop.BackOffice.Infrastructure.Out.DbAccess.csproj" />
+    <ProjectReference Include="..\AndradeShop.BackOffice.Infrastructure.Out.Kafta\AndradeShop.BackOffice.Infrastructure.Out.Kafka.csproj" />
+  </ItemGroup>
+
+</Project>
