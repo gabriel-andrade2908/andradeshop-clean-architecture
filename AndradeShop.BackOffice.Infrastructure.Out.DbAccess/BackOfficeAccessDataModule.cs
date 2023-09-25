@@ -1,5 +1,5 @@
-﻿using AndradeShop.BackOffice.Infrastructure.Out.DbAccess.Contexts.Products;
-using EShopOnContainer.BackOffice.Application;
+﻿using AndradeShop.BackOffice.Application;
+using AndradeShop.BackOffice.Infrastructure.Out.DbAccess.Contexts.Products;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

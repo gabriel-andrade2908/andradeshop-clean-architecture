@@ -11,7 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AndradeShop.BackOffice.Infrastructure.In.Http.Controllers
 {
-    [ApiExplorerSettings(IgnoreApi = true)]
+    [ApiController]
+    [Route("api/[controller]")]
     public class ColorController : AndradeShop.Infrastructure.In.Controllers.EntityController<GetColorByIdQuery, NamedEntityDTO, AddColorCommand, UpdateColorCommand, DeleteColorCommand>
     {
         public ColorController(DomainNotificationService domainNotificationService, UserHttpRequest usuarioHttpRequest, BusService busService) : base(domainNotificationService, usuarioHttpRequest, busService)

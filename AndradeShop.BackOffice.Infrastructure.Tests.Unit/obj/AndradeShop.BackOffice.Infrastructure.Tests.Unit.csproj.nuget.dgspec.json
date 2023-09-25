@@ -4,6 +4,66 @@
     "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Infrastructure.Tests.Unit\\AndradeShop.BackOffice.Infrastructure.Tests.Unit.csproj": {}
   },
   "projects": {
+    "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Domain\\AndradeShop.BackOffice.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Domain\\AndradeShop.BackOffice.Domain.csproj",
+        "projectName": "AndradeShop.BackOffice.Domain",
+        "projectPath": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Domain\\AndradeShop.BackOffice.Domain.csproj",
+        "packagesPath": "C:\\Users\\DTI Digital\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DTI Digital\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://vale-devops.pkgs.visualstudio.com/57d7a7eb-d461-4c22-bc6d-c995b870309f/_packaging/vale-ecos/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.Core.Domain\\AndradeShop.Core.Domain.csproj": {
+                "projectPath": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.Core.Domain\\AndradeShop.Core.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Infrastructure.Tests.Unit\\AndradeShop.BackOffice.Infrastructure.Tests.Unit.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,7 +88,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Domain\\AndradeShop.BackOffice.Domain.csproj": {
+                "projectPath": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.BackOffice.Domain\\AndradeShop.BackOffice.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -60,6 +124,80 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.Core.Domain\\AndradeShop.Core.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.Core.Domain\\AndradeShop.Core.Domain.csproj",
+        "projectName": "AndradeShop.Core.Domain",
+        "projectPath": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.Core.Domain\\AndradeShop.Core.Domain.csproj",
+        "packagesPath": "C:\\Users\\DTI Digital\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DTI Digital\\Documents\\Projetos\\Rangers\\Andrade Shop\\Andrade Shop\\AndradeShop.Core.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DTI Digital\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://vale-devops.pkgs.visualstudio.com/57d7a7eb-d461-4c22-bc6d-c995b870309f/_packaging/vale-ecos/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.7.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
             }
           },
           "imports": [

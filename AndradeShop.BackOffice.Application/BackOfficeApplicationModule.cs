@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
 using System.Reflection;
 
-namespace EShopOnContainer.BackOffice.Application
+namespace AndradeShop.BackOffice.Application
 {
     public static class BackOfficeApplicationModule
     {

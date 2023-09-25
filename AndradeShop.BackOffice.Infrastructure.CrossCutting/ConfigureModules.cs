@@ -1,6 +1,6 @@
-﻿using AndradeShop.BackOffice.Infrastructure.Out.DbAccess;
+﻿using AndradeShop.BackOffice.Application;
+using AndradeShop.BackOffice.Infrastructure.Out.DbAccess;
 using AndradeShop.BackOffice.Infrastructure.Out.Kafta;
-using EShopOnContainer.BackOffice.Application;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AndradeShop.BackOffice.Infrastructure.CrossCutting

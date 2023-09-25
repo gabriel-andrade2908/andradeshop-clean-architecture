@@ -12,7 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AndradeShop.BackOffice.Infrastructure.In.Http.Controllers
 {
-    [ApiExplorerSettings(IgnoreApi = true)]
+    [ApiController]
+    [Route("api/[controller]")]
     public class CategoryController : EntityController<GetCategoryByIdQuery, NamedEntityDTO,
         AddCategoryCommand, UpdateCategoryCommand, DeleteCategoryCommand>
     {
