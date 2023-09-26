@@ -135,7 +135,7 @@ namespace AndradeShop.Core.Infrastructure.Out.Kafta
             var producer = new ProducerBuilder<string, string>(producerConfig).Build();
             try
             {
-                await producer.ProduceAsync(kafkaTransferDataDTO.Topic, new Message<string, string> { Key = Guid.NewGuid().ToString(), Value = kafkaTransferDataDTO.MessageContent }, cancellationToken);
+                //await producer.ProduceAsync(kafkaTransferDataDTO.Topic, new Message<string, string> { Key = Guid.NewGuid().ToString(), Value = kafkaTransferDataDTO.MessageContent }, cancellationToken);
             }
             catch (Exception kafkaError)
             {
