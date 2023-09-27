@@ -1,6 +1,6 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers;
+﻿using AndradeShop.Core.Domain.Services.Validations.Helpers;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities
+namespace AndradeShop.Core.Application.Tests.Integration.Domain.FakieEntities
 {
     internal class FakeEntityValidation : DomainValidationStrategyPolicy<FakeEntity>
     {

@@ -1,22 +1,17 @@
-﻿using Cassiano.EShopOnContainers.Core.Application;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.FakesInfra;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
-using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Commands.TestBusMemoryWithoutReturn;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Commands.TestBusMemoryWithReturn;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Events.TestBusMemoryWithReturn;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestInfrastructureBus;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestInfrastructureBus.Commands;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestInfrastructureBus.Events;
+﻿using AndradeShop.Core.Application;
+using AndradeShop.Core.Domain.Services.Bus;
+using AndradeShop.Core.Domain.Services.DomainNotifications;
+using AndradeShop.Core.Domain.Tests.Unit.Bus.TestBusMemory.Commands.TestBusMemoryWithoutReturn;
+using AndradeShop.Core.Domain.Tests.Unit.Bus.TestBusMemory.Commands.TestBusMemoryWithReturn;
+using AndradeShop.Core.Domain.Tests.Unit.Bus.TestBusMemory.Events.TestBusMemoryWithReturn;
+using AndradeShop.Core.Domain.Tests.Unit.Bus.TestInfrastructureBus;
+using AndradeShop.Core.Domain.Tests.Unit.Bus.TestInfrastructureBus.Commands;
+using AndradeShop.Core.Domain.Tests.Unit.Bus.TestInfrastructureBus.Events;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
+namespace AndradeShop.Core.Domain.Tests.Unit.Bus
 {
     public class BusTests
     {
@@ -61,7 +56,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
             Assert.NotNull(hasFirstExecution);
 
         }
-        
+
         [Trait("Categoria", "Bus")]
         [Fact(DisplayName = "3 - Send Without Return Memory Message with error")]
         public async Task SendWithoutReturnMemoryMessageWithErrorAsync()
@@ -74,8 +69,8 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
             {
                 Assert.Equal("Error on execute command", error.Message);
                 Assert.Equal("Expected Error", error.InnerException!.Message);
-            } 
-            
+            }
+
 
         }
         [Trait("Categoria", "Bus")]

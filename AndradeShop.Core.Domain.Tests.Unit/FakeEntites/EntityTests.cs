@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
+namespace AndradeShop.Core.Domain.Tests.Unit.FakeEntites
 {
     public class EntityTests
     {
@@ -32,13 +27,13 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
         {
             // arrage
             Guid entityId = Guid.NewGuid();
-            var name = "cassiano";
+            var name = "andrade";
 
             // act
             var entity = new FakeNamedEntity(entityId, name);
 
             // assert
-            Assert.Equal("cassiano", entity.Name.Value);
+            Assert.Equal("andrade", entity.Name.Value);
         }
     }
 }

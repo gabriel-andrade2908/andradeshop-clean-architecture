@@ -1,7 +1,7 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities;
+﻿using AndradeShop.Core.Application.Tests.Integration.Domain.FakieEntities;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers
+namespace AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers
 {
     [CollectionDefinition(nameof(FakeEntityHandlerCollection))]
     public class FakeEntityHandlerCollection : ICollectionFixture<FakeEntityHandlerFixture>

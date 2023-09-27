@@ -1,16 +1,13 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.FakesInfra;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers;
-using Cassiano.EShopOnContainers.Core.Domain.Auth;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
+﻿using AndradeShop.Core.Application.Tests.Integration.Domain.FakieEntities;
+using AndradeShop.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection;
+using AndradeShop.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities;
+using AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers;
+using AndradeShop.Core.Domain.Auth;
+using AndradeShop.Core.Domain.Services.Bus.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
 using System.Reflection;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.IoC
+namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.TestsConfig.IoC
 {
     public static class TestsServiceProvider
     {

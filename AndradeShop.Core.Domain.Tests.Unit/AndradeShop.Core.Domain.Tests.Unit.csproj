@@ -21,4 +21,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AndradeShop.Core.Application.Tests.Integration\AndradeShop.Core.Application.Tests.Integration.csproj" />
+    <ProjectReference Include="..\AndradeShop.Core.Application\AndradeShop.Core.Application.csproj" />
+    <ProjectReference Include="..\AndradeShop.Core.Domain\AndradeShop.Core.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

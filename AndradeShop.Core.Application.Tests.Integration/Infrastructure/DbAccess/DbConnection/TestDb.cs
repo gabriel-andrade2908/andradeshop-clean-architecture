@@ -1,14 +1,13 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities;
+﻿using AndradeShop.Core.Application.Tests.Integration.Domain.FakieEntities;
+using AndradeShop.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System.IO;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection
+namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection
 {
     public class TestDb : DbContext
     {
-        public TestDb() 
+        public TestDb()
         {
         }
 

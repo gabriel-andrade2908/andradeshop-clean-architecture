@@ -1,9 +1,8 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection;
-using Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository;
-using System.Linq;
+﻿using AndradeShop.Core.Application.Tests.Integration.Domain.FakieEntities;
+using AndradeShop.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection;
+using AndradeShop.Core.Infrastructure.Out.DbAccess.Repositories;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities
+namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities
 {
     public class FakeEntityRepository : NamedEntityRepository<FakeEntity>, IFakeEntityRepository
     {

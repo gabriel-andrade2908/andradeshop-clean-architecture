@@ -1,25 +1,21 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.FakesInfra;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.IoC;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeCreateEntity;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeDeleteEntity;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeGetEntityById;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeUpdateEntity;
-using Cassiano.EShopOnContainers.Core.Domain.Helpers.Exceptions;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
-using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
-using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications.Models;
+﻿using AndradeShop.Core.Application.Tests.Integration.Domain.FakieEntities;
+using AndradeShop.Core.Application.Tests.Integration.Infrastructure.FakesInfra;
+using AndradeShop.Core.Application.Tests.Integration.Infrastructure.TestsConfig.IoC;
+using AndradeShop.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders;
+using AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeCreateEntity;
+using AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeDeleteEntity;
+using AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeGetEntityById;
+using AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeUpdateEntity;
+using AndradeShop.Core.Domain.Helperrs.Exceptions;
+using AndradeShop.Core.Domain.Services.Bus;
+using AndradeShop.Core.Domain.Services.DomainNotifications;
+using AndradeShop.Core.Domain.Services.DomainNotifications.Models;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers
+namespace AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers
 {
-    [TestCaseOrderer("Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders.PriorityOrderer", "Cassiano.EShopOnContainers.Core.Application.Tests.Integration")]
+    [TestCaseOrderer("AndradeShop.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders", "AndradeShop.Core.Application.Tests.Integration")]
     [Collection(nameof(FakeEntityHandlerCollection))]
     public class EntityCrudCommandHandlerTest
     {
@@ -95,14 +91,14 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
             var fakeEntityDTO = new FakeUpdateEntityCommand()
             {
                 Id = _fixture.AddedFakeEntity.Id,
-                Name = "cassiano editado",
-                Description = "cassiano editado"
+                Name = "andrade editado",
+                Description = "andrade editado"
             };
             //act
             var commandResult = await _bus.SendMessage(fakeEntityDTO);
 
             // assert
-            Assert.True(commandResult.ProccessCompleted); 
+            Assert.True(commandResult.ProccessCompleted);
             var updatedEntity = await _repository.GetByIdAsync(_fixture.AddedFakeEntity.Id);
             Assert.Equal(fakeEntityDTO.Name, updatedEntity!.Name.Value);
             Assert.Equal(fakeEntityDTO.Description, updatedEntity!.Description);
@@ -117,7 +113,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
             var fakeEntityDTO = new FakeUpdateEntityCommand()
             {
                 Id = _fixture.AddedFakeEntity.Id,
-                Name = "cassiano editado",
+                Name = "andrade editado",
             };
             //act
             var commandResult = await _bus.SendMessage(fakeEntityDTO);
@@ -135,8 +131,8 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
             var fakeEntityDTO = new FakeUpdateEntityCommand()
             {
                 Id = Guid.NewGuid(),
-                Name = "cassiano editado",
-                Description = "cassiano editado"
+                Name = "andrade editado",
+                Description = "andrade editado"
             };
 
             //act
@@ -168,8 +164,6 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
             Assert.Null(deletedEntity);
         }
 
-
-
         private IEnumerable<Notification> GetNotifications()
         {
             return _domainNotificationService.GetAll().Where(notification => notification.Code != "testinfra");
@@ -178,6 +172,5 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
         {
             return GetNotifications().Any();
         }
-
     }
 }

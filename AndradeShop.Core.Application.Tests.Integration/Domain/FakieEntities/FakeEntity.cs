@@ -1,9 +1,8 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.ValueObject;
-using System;
+﻿using AndradeShop.Core.Domain.Entities;
+using AndradeShop.Core.Domain.Interfaces.Entities;
+using AndradeShop.Core.Domain.ValueObject;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities
+namespace AndradeShop.Core.Application.Tests.Integration.Domain.FakieEntities
 {
     public class FakeEntity : NamedEntity<FakeEntity>, INamedEntity
     {

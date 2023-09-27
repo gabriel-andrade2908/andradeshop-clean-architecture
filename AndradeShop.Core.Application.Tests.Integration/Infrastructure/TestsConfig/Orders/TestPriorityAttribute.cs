@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders
+﻿namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class TestPriorityAttribute : Attribute

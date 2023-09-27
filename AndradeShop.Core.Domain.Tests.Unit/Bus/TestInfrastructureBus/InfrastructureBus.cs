@@ -1,12 +1,15 @@
 ﻿using AndradeShop.Core.Domain.Services.Bus.Interfaces;
 using AndradeShop.Core.Domain.Services.Bus.Models;
+using AndradeShop.Core.Domain.Services.DomainNotifications;
 
-namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.FakesInfra
+namespace AndradeShop.Core.Domain.Tests.Unit.Bus.TestInfrastructureBus
 {
-    public class FakeCleanInfrastructureBus : IInfrastructureBusService
+    public class InfrastructureBus : IInfrastructureBusService
     {
-        public FakeCleanInfrastructureBus()
+        private readonly DomainNotificationService _domainNotificationService;
+        public InfrastructureBus(DomainNotificationService domainNotificationService)
         {
+            _domainNotificationService = domainNotificationService;
         }
 
         public Task ConsumerAsync<TData>(Func<TData, Task> onConsume, CancellationToken cancellationToken = default)
@@ -16,16 +19,19 @@ namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.FakesInf
 
         public Task PublishEvent<TData>(TData data, CancellationToken cancellationToken = default)
         {
+            _domainNotificationService.Add("testinfra", "Test");
             return Task.CompletedTask;
         }
 
         public Task<CommandResult> SendMessage<TData>(TData data, CancellationToken cancellationToken = default)
         {
+            _domainNotificationService.Add("testinfra", "Test");
             return Task.FromResult(CommandResult.CommandFinished());
         }
 
         public Task<CommandResult<TResponse>> SendMessage<TData, TResponse>(TData data, CancellationToken cancellationToken = default)
         {
+            _domainNotificationService.Add("testinfra", "Test");
 #pragma warning disable CS8619 // A anulabilidade de tipos de referência no valor não corresponde ao tipo de destino.
             return Task.FromResult(CommandResult<TResponse>.CommandFinished(default));
 #pragma warning restore CS8619 // A anulabilidade de tipos de referência no valor não corresponde ao tipo de destino.
@@ -33,3 +39,5 @@ namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.FakesInf
 
     }
 }
+
+

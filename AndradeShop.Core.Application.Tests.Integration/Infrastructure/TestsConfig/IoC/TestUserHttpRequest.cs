@@ -1,9 +1,6 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Auth;
-using Cassiano.EShopOnContainers.Core.Domain.Auth.Claims;
-using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
+﻿using AndradeShop.Core.Domain.Auth;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.IoC
+namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.TestsConfig.IoC
 {
     internal class TestUserHttpRequest : UserHttpRequest
     {
@@ -13,12 +10,12 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastr
         {
         }
 
-        protected override IEnumerable<ClaimApp> GetApplicationClaims()
-        {
-            return new List<ClaimApp>
-            {
-                new ClaimApp("TestType", "TestValue")
-            };
-        }
+        //protected override IEnumerable<ClaimApp> GetApplicationClaims()
+        //{
+        //    return new List<ClaimApp>
+        //    {
+        //        new ClaimApp("TestType", "TestValue")
+        //    };
+        //}
     }
 }

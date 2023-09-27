@@ -1,8 +1,7 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
-using System;
+﻿using AndradeShop.Core.Domain.GenericDTOs.Entities;
+using AndradeShop.Core.Domain.Services.Bus.Interfaces;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeCreateEntity
+namespace AndradeShop.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeCreateEntity
 {
     internal class FakeCreateEntityCommand : NamedEntityDTO, IAppMessage<Guid?>
     {

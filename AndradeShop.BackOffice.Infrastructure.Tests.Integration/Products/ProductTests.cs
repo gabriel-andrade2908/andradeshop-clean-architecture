@@ -63,13 +63,11 @@ namespace AndradeShop.BackOffice.Infrastructure.Tests.Integration.Products
             Assert.Equal(command.Price.Cost, addedEntity.Price.Cost);
             Assert.Equal(command.Price.Sale, addedEntity.Price.Sale);
 
-            Assert.Equal(command.ProductCategories.Count, addedEntity.ProductCategories.Count);
-            Assert.Collection(command.ProductCategories, pc => Assert.Equal(pc.Id, addedEntity.ProductCategories.ToList()[0].CategoryId),
-                                                         pc => Assert.Equal(pc.Id, addedEntity.ProductCategories.ToList()[1].CategoryId));
+            Assert.Collection(command.ProductCategories, pc => Assert.Equal(pc.Id, addedEntity.ProductCategories.ElementAt(0).CategoryId),
+                                                         pc => Assert.Equal(pc.Id, addedEntity.ProductCategories.ElementAt(1).CategoryId));
 
-            Assert.Equal(command.ProductColors.Count, addedEntity.ProductColors.Count);
-            Assert.Collection(command.ProductColors, pc => Assert.Equal(pc.Id, addedEntity.ProductColors.ToList()[0].ColorId),
-                                                     pc => Assert.Equal(pc.Id, addedEntity.ProductColors.ToList()[1].ColorId));
+            Assert.Collection(command.ProductColors, pc => Assert.Equal(pc.Id, addedEntity.ProductColors.ElementAt(0).ColorId),
+                                                     pc => Assert.Equal(pc.Id, addedEntity.ProductColors.ElementAt(1).ColorId));
 
             _fixture.AddProduct(addedEntity!);
 

@@ -1,11 +1,8 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
-using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using AndradeShop.Core.Domain.Services.Bus.Interfaces;
+using AndradeShop.Core.Domain.Services.Bus.Models;
+using AndradeShop.Core.Domain.Services.DomainNotifications;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.FakesInfra
+namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.FakesInfra
 {
     public class FakeInfrastructureBus : IInfrastructureBusService
     {

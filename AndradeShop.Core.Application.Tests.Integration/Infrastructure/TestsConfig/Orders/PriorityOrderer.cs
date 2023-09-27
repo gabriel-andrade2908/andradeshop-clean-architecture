@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Xunit.Abstractions;
+﻿using Xunit.Abstractions;
 using Xunit.Sdk;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders
+namespace AndradeShop.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders
 {
     public class PriorityOrderer : ITestCaseOrderer
     {

@@ -1,14 +1,9 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentValidationDecorator.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentValidationDecorator.Entities.Policies;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AndradeShop.Core.Domain.Services.Validations.Helpers;
+using AndradeShop.Core.Domain.Tests.Unit.Validations.FluentValidationDecorator.Entities;
+using AndradeShop.Core.Domain.Tests.Unit.Validations.FluentValidationDecorator.Entities.Policies;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentValidationDecorator
+namespace AndradeShop.Core.Domain.Tests.Unit.Validations.FluentValidationDecorator
 {
     public class DomainValidationStrategyPolicyTests
     {
@@ -24,9 +19,9 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
 
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.Required("Required"));
+            Assert.Single(result.Errors, _validationErrorMessageService.Required("Required"));
             Assert.False(result.IsValid);
         }
         [Trait("Category", "FluentValidationDecorator")]
@@ -56,7 +51,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var result = await entityValidation.ValidateAsync(entity);
 
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.MinLength("MinLength", 2));
+            Assert.Single(result.Errors, _validationErrorMessageService.MinLength("MinLength", 2));
             Assert.False(result.IsValid);
         }
 
@@ -86,7 +81,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var result = await entityValidation.ValidateAsync(entity);
 
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.MaxLength("MaxLength", 150));
+            Assert.Single(result.Errors, _validationErrorMessageService.MaxLength("MaxLength", 150));
             Assert.False(result.IsValid);
         }
 
@@ -117,7 +112,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var result = await entityValidation.ValidateAsync(entity);
 
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.NumberMaxDouble("OverflowDouble", 1000));
+            Assert.Single(result.Errors, _validationErrorMessageService.NumberMaxDouble("OverflowDouble", 1000));
             Assert.False(result.IsValid);
         }
 
@@ -146,9 +141,9 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
 
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.NumberMinDouble("MimRangeDouble", 0));
+            Assert.Single(result.Errors, _validationErrorMessageService.NumberMinDouble("MimRangeDouble", 0));
             Assert.False(result.IsValid);
         }
 
@@ -159,10 +154,10 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
             Assert.Empty(result.Errors.Where(error => error == _validationErrorMessageService.NumberMinDouble("MimRangeDouble", 0)));
         }
@@ -174,12 +169,12 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.NumberMaxInt("OverflowInt", 1000));
+            Assert.Single(result.Errors, _validationErrorMessageService.NumberMaxInt("OverflowInt", 1000));
             Assert.False(result.IsValid);
         }
 
@@ -190,10 +185,10 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
             Assert.Empty(result.Errors.Where(error => error == _validationErrorMessageService.NumberMaxInt("OverflowInt", 1000)));
         }
@@ -205,12 +200,12 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.NumberMinInt("MimRangeInt", 0));
+            Assert.Single(result.Errors, _validationErrorMessageService.NumberMinInt("MimRangeInt", 0));
             Assert.False(result.IsValid);
         }
 
@@ -221,10 +216,10 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
             Assert.Empty(result.Errors.Where(error => error == _validationErrorMessageService.NumberMinInt("MimRangeInt", 0)));
         }
@@ -236,12 +231,12 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
-            Assert.Single(result.Errors , _validationErrorMessageService.Email("Email"));
+            Assert.Single(result.Errors, _validationErrorMessageService.Email("Email"));
             Assert.False(result.IsValid);
         }
 
@@ -252,10 +247,10 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
-            
+
             //result
             Assert.Empty(result.Errors.Where(error => error == _validationErrorMessageService.Email("Email")));
         }
@@ -301,7 +296,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "BirthDateMustOld must be greater than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -320,7 +315,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "BirthDateMustOld must be greater than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -337,7 +332,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "DateNotBeGreaterThenCurrentDate must be less than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -355,7 +350,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "DateNotBeGreaterThenCurrentDate must be less than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -372,7 +367,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "NotBeLessThenCurrentDate must be greater than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -390,7 +385,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "NotBeLessThenCurrentDate must be greater than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -407,7 +402,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "OverflowDate must be less than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -425,7 +420,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "OverflowDate must be less than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -442,7 +437,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "MinRangeDate must be greater than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -460,7 +455,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
             var partialMessageError = "MinRangeDate must be greater than";
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -476,7 +471,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityInvalid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 
@@ -492,7 +487,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.FluentVa
             //arrange
             var entity = GetEntityValid();
             var entityValidation = new EntityFluentValidationDecoratorPolicy(entity);
-            
+
             //action
             var result = await entityValidation.ValidateAsync(entity);
 

@@ -1,8 +1,7 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Helpers.Extensions;
-using System;
+﻿using AndradeShop.Core.Domain.Helperrs.Extensions;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
+namespace AndradeShop.Core.Domain.Tests.Unit.FakeEntites
 {
     public class HelperTests
     {
@@ -12,8 +11,8 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
         [Fact(DisplayName = "String format to search - success")]
         public void Entity_Create_Success()
         {
-            var name = "cássiano Garcia nunes";
-            var searchableName = "cassiano garcia nunes";
+            var name = "Gábriel Barcelos";
+            var searchableName = "gabriel barcelos";
 
             Assert.Equal(name.ToSerachable(), searchableName);
         }
